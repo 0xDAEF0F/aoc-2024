@@ -37,7 +37,7 @@ fn djikstras(grid: &Vec<Vec<char>>, start: (usize, usize)) -> Option<Vec<Vec<(us
 
         let free_neighbors = neighbors
             .into_iter()
-            .filter(|&(y, x, d)| (grid[y][x] == '.' || grid[y][x] == 'E'))
+            .filter(|&(y, x, _)| (grid[y][x] == '.' || grid[y][x] == 'E'))
             .collect_vec();
 
         for (ny, nx, n_dir) in free_neighbors {
